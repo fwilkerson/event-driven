@@ -17,8 +17,8 @@ Subscribe an event handler
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | eventName | string | The name of the event | &nbsp; |
 | handler | Function | The function to be executed when the event is emitted | &nbsp; |
 
@@ -41,8 +41,8 @@ Unsubscribe an event handler
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | eventName | string | The name of the event | &nbsp; |
 | handler | Function | The handler to be removed | &nbsp; |
 
@@ -65,8 +65,8 @@ Publish an event
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | eventName | string | The name of the event | &nbsp; |
 | event | Object | The parameter to pass to the event handlers | &nbsp; |
 
@@ -96,8 +96,8 @@ The collection constructor with an optional initial value parameter
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | init | Array<T> | An array to initialize the collection with | &nbsp; |
 
 
@@ -119,8 +119,8 @@ Subscribe an event handler to be called whenever the collection is modified
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | handler | Function | The collection changed handler | &nbsp; |
 
 
@@ -142,8 +142,8 @@ Add a value to the collection
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | value | T | The value to be added to the collection | &nbsp; |
 
 
@@ -165,8 +165,8 @@ Remove the value from the collection
 
 ##### Parameters
 
-| Name | Type | Description |  |
-| ---- | ---- | ----------- | -------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | value | T | The value to be removed from the collection | &nbsp; |
 
 
