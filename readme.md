@@ -2,6 +2,7 @@
 
 Helper functions for writing event driven systems.
 
+&nbsp;
 
 ## EventEmitter
 
@@ -77,6 +78,7 @@ Publish an event
 
 - `Void`
 
+&nbsp;
 
 ## Collection
 
