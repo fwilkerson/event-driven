@@ -1,0 +1,23 @@
+{
+  "name": "event-driven",
+  "version": "0.1.0",
+  "main": "dist/bundle.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "sinon": "^3.2.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tape tests/**/*.test.js | tap-spec",
+    "minify": "babel ./dist/index.js --out-file ./dist/index.min.js"
+  },
+  "babel": {
+    "presets": ["es2015", "minify"]
+  }
+}

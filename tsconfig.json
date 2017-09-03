@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "umd",
+    "newLine": "LF",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "pretty": true,
+    "strict": true,
+    "target": "es2015"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
