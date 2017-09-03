@@ -22,13 +22,13 @@ export interface EventEmitter {
    * @param eventName {string} The name of the event
    * @param event {Object} The parameter to pass to the event handlers
   */
-  emit(eventName: string, event: Object): void;
+  emit(eventName: string, event: any): void;
 }
 
 export type CollectionChangedEvent<T> = {
   type: string;
-  old: T[];
-  new: T[];
+  old: Array<T>;
+  new: Array<T>;
 };
 
 export type CollectionChangedEventHandler<T> = (
@@ -63,7 +63,7 @@ export interface Collection<T> {
    * 
    * @returns {Array<T>} A copy of the collection
    */
-  toList(): T[];
+  toList(): Array<T>;
 }
 
 /**
@@ -71,7 +71,7 @@ export interface Collection<T> {
  * @returns {EventEmitter}
  */
 export function EventEmitter(): EventEmitter {
-  const events: Map<string, Function[]> = new Map();
+  const events: Map<string, Array<Function>> = new Map();
   return {
     on(eventName, handler): Function {
       const eventHandlers = events.get(eventName) || [];
@@ -96,7 +96,7 @@ export function EventEmitter(): EventEmitter {
  * The Collection factory
  * @returns {Collection<T>}
  */
-export function Collection<T>(init: T[]): Collection<T> {
+export function Collection<T>(init: Array<T>): Collection<T> {
   const eventEmitter = EventEmitter();
   const collectionChangedKey = 'collectionChanged';
   const collectionChanged = eventEmitter.emit.bind(null, collectionChangedKey);
