@@ -156,6 +156,30 @@ Add a value to the collection
 
 
 
+#### addRange(values) 
+
+Add a range of values to the collection
+
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| values | Array<T> | The range of values to be added to the collection | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `Void`
+
+
+
+
 #### remove(value) 
 
 Remove the value from the collection
@@ -168,6 +192,20 @@ Remove the value from the collection
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | T | The value to be removed from the collection | &nbsp; |
+
+
+
+
+##### Returns
+
+
+- `Void`
+
+
+
+#### clear() 
+
+Removes all items within the collection
 
 
 
