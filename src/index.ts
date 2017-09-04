@@ -52,11 +52,23 @@ export interface Collection<T> {
   add(value: T): void;
 
   /**
+   * Add a range of values to the collection
+   * 
+   * @param values {Array<T>} The range of values to be added to the collection
+   */
+  addRange(values: Array<T>): void;
+
+  /**
    * Remove the value from the collection
    * 
    * @param value {T} The value to be removed from the collection
    */
   remove(value: T): void;
+
+  /**
+   * Removes all items within the collection
+   */
+  clear(): void;
 
   /**
    * Returns a copy of the list in the form of an array
@@ -114,12 +126,24 @@ export function Collection<T>(init: Array<T>): Collection<T> {
       collectionChanged({ type: 'add', old, new: list.slice() });
     },
 
+    addRange(values) {
+      const old = list.slice();
+      values.forEach(value => list.push(value));
+      collectionChanged({ type: 'addRange', old, new: list.slice() });
+    },
+
     remove(value) {
       const old = list.slice();
       const comparer = JSON.stringify(value);
       const indexToRemove = list.findIndex(x => JSON.stringify(x) === comparer);
       list.splice(indexToRemove, 1);
       collectionChanged({ type: 'remove', old, new: list.slice() });
+    },
+
+    clear() {
+      const old = list.slice();
+      list.splice(0, list.length);
+      collectionChanged({ type: 'clear', old, new: list.slice() });
     },
 
     toList: () => list.slice()

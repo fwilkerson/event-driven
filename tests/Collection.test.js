@@ -57,5 +57,25 @@ test('observable collection', t => {
 
   t.ok(secondCollection.toList().length === 0, 'can remove complex types');
 
+  const thirdCollection = Collection([1, 2, 3]);
+
+  thirdCollection.onCollectionChanged(e => {
+    t.ok(e.type === 'clear', 'collectionChanged type is clear');
+    t.deepEqual(e.old, [1, 2, 3], 'values that were cleared are in e.old');
+    t.deepEqual(e.new, [], 'collection was cleared');
+  });
+
+  thirdCollection.clear();
+
+  const fourthCollection = Collection([4]);
+
+  fourthCollection.onCollectionChanged(e => {
+    t.ok(e.type === 'addRange', 'collectionChanged type is addRange');
+    t.deepEqual(e.old, [4], 'collection starts with initial values');
+    t.deepEqual(e.new, [4, 1, 2, 3], 'range of values was added');
+  });
+
+  fourthCollection.addRange([1, 2, 3]);
+
   t.end();
 });
